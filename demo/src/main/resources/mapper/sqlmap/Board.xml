@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.BoardDao">
+
+     <select id="selectBoardCnt" resultType = "java.lang.Integer" >
+    	SELECT
+			COUNT(*)
+    	FROM
+    		board_tbl
+    </select>
+    
+    <select id="selectBoardList" resultType="com.example.demo.dto.BoardDto" >
+    	SELECT
+			no,
+			member_user_id,
+			title,
+			write_date,
+			view
+    	FROM
+    		board_tbl
+    </select>
+    
+<!-- 
+    <insert id="save" parameterType="com.example.demo.vo.BoardVO">
+    	INSERT
+    	INTO 
+    		board_tbl (member_user_id,title,content,write_date,view)
+    	VALUES 
+    		(#{member_user_id},#{title},#{content},now(),#{view})
+    </insert>
+ -->
+</mapper>
